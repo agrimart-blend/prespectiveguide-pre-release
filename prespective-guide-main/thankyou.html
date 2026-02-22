@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Thanks</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6075359371077493"
+     crossorigin="anonymous"></script>
+<!-- AD -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-6075359371077493"
+     data-ad-slot="5430843818"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<img src="mascot_thankyou.svg" style="position:fixed;left:0;top:0;width:100%;height:100%;object-fit:cover;opacity:0.06;pointer-events:none"/>
+<div class="thank-wrap" style="display:flex;align-items:center;justify-content:center">
+  <div class="thank-box">
+    <div class="loader-ring"></div>
+    <h2>Your download is ready</h2>
+    <div class="link-box">
+      <a id="thankDownload" class="box-btn" href="#">Download file</a>
+      <a class="box-btn" href="index.html">Make another perspective guide</a>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  const data = sessionStorage.getItem('perspective_export_data');
+  const name = sessionStorage.getItem('perspective_export_name') || 'perspective.png';
+  const a = document.getElementById('thankDownload');
+
+  if(data){
+    a.href = data;
+    a.download = name;
+    setTimeout(()=>a.click(), 8000);
+    sessionStorage.removeItem('perspective_export_data');
+    sessionStorage.removeItem('perspective_export_name');
+  }else{
+    a.textContent = 'No file found, go back';
+    a.href = 'index.html';
+  }
+})();
+
+// === LOADER_DELAY_PATCH ===
+setTimeout(()=>{
+  const ring = document.querySelector('.loader-ring');
+  if(ring) ring.style.display = 'none';
+  const h = document.querySelector('h2');
+  if(h) h.textContent = 'Preparing your download…';
+}, 6000);
+// === END PATCH ===
+</script>
+
+
+<div style="text-align:center;margin-top:16px;"><button class="btn" onclick="window.location.href='index.html'">Return to editor (keep work)</button></div>
+</body>
+</html>
