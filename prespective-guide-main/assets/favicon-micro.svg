@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-  <rect width="16" height="16" rx="3" fill="#9AC7D9"/>
-  <!-- tiny central dot -->
-  <circle cx="8" cy="8" r="1.8" fill="#FFFFFF"/>
-  <!-- two bold wedges indicating convergence -->
-  <path d="M3 4 L8 8 L3 12 Z" fill="rgba(255,255,255,0.85)"/>
-  <path d="M13 4 L8 8 L13 12 Z" fill="rgba(255,255,255,0.65)"/>
-</svg>
